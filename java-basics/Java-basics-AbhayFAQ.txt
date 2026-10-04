@@ -24,7 +24,18 @@ hit a http request to server and get response
 - add below in in (build.gradle.kts)'s dependencies
 	implementation("com.squareup.okhttp3:okhttp:5.5.0")
 - add below in (build.gradle.kts)'s tasks.jar to make build jar a fat jar , fat jar mean in our jar dependencies classes will also get added.
-    duplicateStrategy = DuplicatesStrategy.EXCLUDE
     from(configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) })
+- add below in (build.gradle.kts)'s tasks.jar to exclude duplicate dependencies classes 
+	duplicateStrategy = DuplicatesStrategy.EXCLUDE
+```
+tasks.jar {
+    manifest {
+        attributes["Main-Class"] = "com.learning.Main" 
+    }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from(configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) })
+
+}
+```
 - make a client class and various CRUD methods, call client's object various CRUD method from main class and print the server response 
 -  
