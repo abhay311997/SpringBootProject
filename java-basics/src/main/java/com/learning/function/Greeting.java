@@ -1,4 +1,4 @@
-package com.function;
+package com.learning.function;
 
 public class Greeting {
     /*
