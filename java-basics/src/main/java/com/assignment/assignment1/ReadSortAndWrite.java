@@ -1,30 +1,25 @@
-package com.assignment;
+package com.assignment.assignment1;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
-// Reads files whose names start with "in*" from the "files" directory, 
-// extracts numbers from them, sorts the numbers, 
-// and writes them to files/out.txt 
-// If the out.txt file already exists, it will be overwritten.
-
+//Assignment 1: Read two input files in1.txt and in2.txt and extract numbers from them
+//and Write them to files/out.txt in ascending order. If the out.txt file already exists, it will be overwritten.
 public class ReadSortAndWrite {
     public static void main(String[] args) throws IOException {
-        Path filesDir = Paths.get("files");
+        Path filesDir = Paths.get("C:\\SpringBoot\\Project\\java-basics\\src\\main\\java\\com\\assignment\\assignment1\\files");
         List<Integer> numbers = new ArrayList<>();
 
         /* Read two input files in1.txt and in2.txt and extract numbers from them 
         then push them into the list numbers */
         try {
-            Path path = Paths.get("files", "in1.txt"); //read from files/in1.txt when run from the java-basics folder
+            Path path = Paths.get("C:\\SpringBoot\\Project\\java-basics\\src\\main\\java\\com\\assignment\\assignment1\\files", "in1.txt"); //read from files/in1.txt when run from the java-basics folder
             Files.readAllLines(path).forEach(line -> {
                 String value = line.trim();
                 if (!value.isEmpty()) {
@@ -35,7 +30,7 @@ public class ReadSortAndWrite {
                 e.printStackTrace();
         }
         try{
-            Path path = Paths.get("files", "in2.txt"); 
+            Path path = Paths.get("C:\\SpringBoot\\Project\\java-basics\\src\\main\\java\\com\\assignment\\assignment1\\files", "in2.txt");
             Files.readAllLines(path).forEach(line -> {
                 String value = line.trim();
                 if (!value.isEmpty()) {
@@ -47,9 +42,9 @@ public class ReadSortAndWrite {
         }
 
         // Bonus1: Make the program work for any number of files.
-
         // Read all files in the "files" directory whose names start with "in*" and extract numbers from them, 
         // push them into the list numbers
+
         /* 
         try (DirectoryStream<Path> inputFiles =
                      Files.newDirectoryStream(filesDir, "in*")) { // Read all files in the "files" directory whose names start with "in*"
