@@ -51,7 +51,7 @@ Build and run the jar file
 java -jar build/libs/java-basics-1.0-SNAPSHOT.jar
 ```
 
-## Assignments 
+## Assignments Available at java-basics/src/main/java/com/assignment
 
 ### 01: Merge Sort Files 
 

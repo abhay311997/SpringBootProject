@@ -90,3 +90,96 @@ Upto Lecture "Backend: Git and Github - 2" 40 min
 	
 	
 	
+
+1. Initialise git repo
+
+PS C:\github> git init 
+	Initialized empty Git repository in C:/github/.git/
+	
+	
+Created a local Repo
+
+2. Add a remote repo to local
+create a repo at github online
+
+PS C:\github> git remote add origin https://github.com/abhay311997/github.git
+	
+3. i) Make any local changes, that will show in 
+PS C:\github> git status   
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Git-Learning.txt
+        WindowVsTerminalCmd.txt
+        desktop.ini
+nothing added to commit but untracked files present (use "git add" to track)
+
+ii) add that changed file in staged changes
+PS C:\github> git add .\Git-Learning.txt
+
+iii) PS C:\github> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   Git-Learning.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        WindowVsTerminalCmd.txt
+        desktop.ini
+		
+iv) commit the staged file to remote branch
+PS C:\github> git commit -m "study"
+[main a6b78da] study
+ 1 file changed, 20 insertions(+)
+ create mode 100644 Git-Learning.txt
+
+(> git commit --amend | it mofdifies the previous commit then have to push that)
+
+v) push the commited changes to remote branch main
+PS C:\github> git push origin main 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 515 bytes | 85.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/abhay311997/github.git
+   cbef89e..a6b78da  main -> main
+   
+(push to all branch
+> git push origin --all
+
+push to a branch named TryBranch
+>git push origin TryBranch
+
+push to current branch
+> git push
+)
+  
+
+4). Create a new branch and switch 
+PS C:\github> git checkout -b "Readme"
+Switched to a new branch 'Readme'
+
+5). Push local commits from Readme directly into the remote main branch without switching branches locally:
+> git push origin Readme:main
+
+6). Push all local branches that exist on your machine to the remote:
+> git push origin --all
+	
+Upto Lecture "Backend: Git and Github - 2" 40 min 
+
+
+7) check which repo is linked to local
+> git remote -v
+
+8) To rename your current branch from master to main:
+> git branch -M main
+	
+	
+	
