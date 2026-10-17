@@ -3,6 +3,16 @@
 ## Development 
 
 ### Test API 
+Made a spring boot project with the following dependencies:
+- Spring Web
+- Spring Boot DevTools
+  which run on "springbasics/src/main/resources/application.properties:server.port"
+- example: application.properties:server.port=5454
+
+- And made a simple controller HelloController to handle the requests, 
+  like  /hello/world → {http://127.0.0.1:5454/hello/world},  return "Hello World !!!"
+- Pass a parameter to the request and return a response with the parameter value
+  like /hello/person?name=John → {http://127.0.0.1:5454/hello/person?name=John}, return "Hello John !!!"
 
 There is [a postman collection](./TaskManager.postman_collection.json) to test the API
 
