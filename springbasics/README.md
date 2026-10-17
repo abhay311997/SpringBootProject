@@ -22,47 +22,34 @@ There is [a postman collection](./Spring Basics.postman_collection.json) to test
 
 ## Assignment
 
-### 03. Make a Task Manager (only  Controller)
+### 03. Make a Student Manager (only  Controller)
 
 #### Project Description
 
-Make a Task Manager with the following features:
+Make a Student Manager with the following features:
 
-- Create a task
-  - Error if name is missing
-  - Error if due date is missing or invalid (before today)
-- List all tasks
-- Fetch a task by id
-  - Respond with 404 if task is not found
-- Update a task (status and due date can be updated)
-  - Respond with 404 if task is not found
-  - > HINT: `@PatchMapping("/{id}")` can be used to update a task by id
-- Delete a task
-  - Respond with 404 if task is not found
-  - > HINT: `@DeleteMapping("/{id}")` can be used to delete a task by id
-
-#### Submission Requirements 
-
-- For this project, you can write all the code inside `TasksController`
-- Separating out Services and Repository not required for this assignment 
-- The tasks are stored in an ArrayList in the controller itself
-  - Tasks list will get reset on every server restart; which is acceptable for this assignment
-
-##### How to submit
-
-- Create a new repository on your GitHub account
-- Create a new Spring Boot project inside it
-- Finish the tasks 
-- Push the code to GitHub
-- Submit the Github repo link [on this form](https://docs.google.com/forms/d/e/1FAIpQLSfYBoju84gWZNybklLwrqiATCiK_GkJvNIzlk-0A1tGH1rskQ/viewform?usp=sf_link)
-
+- Create a student 
+  - 400(Bad Request) Error if rollNo is missing or already exist
+  - 400(Bad Request) Error if name is missing
+  - 400(Bad Request) Error if dateOfBirth is missing or invalid (before today)
+- List all students
+- Fetch a student by rollNo
+  - Respond with 404(Not Found) if student with that rollNo is not exists
+- Update a student (isPresent and dateOfBirth can be updated)
+  - Respond with 404(Not Found) if student with rollNo is not found
+  - > HINT: `@PatchMapping("/{rollNo}")` can be used to update a student by rollNo
+- Delete a student
+  - Respond with 404(Not Found) if student with rollNo is not found
+  - > HINT: `@DeleteMapping("/{rollNo}")` can be used to delete a student by rollNo
+    
 #### Bonus Tasks 
 
-1. Sort and filter functionality for list tasks 
-   1. `GET /tasks?completed=true` should return all completed tasks
-   2. `GET /tasks?completed=false` should return all incomplete tasks
-   3. `GET /tasks?sort=dateDesc` should return all tasks sorted by due date
-   4. `GET /tasks?sort=dateAsc` should return all tasks sorted by due date
+1. Sort and filter functionality for list students 
+   1. `GET /students?isPresent=true` should return all present students
+   2. `GET /students?isPresent=false` should return all absent students
+   3. `GET /students?sort=dateAsc` should return all students sorted by Ascending date of birth
+   4. `GET /students?sort=dateDesc` should return all students sorted by Descending date of birth
 
-2. Bulk Delete tasks which are completed to be implemented 
-   1. `DELETE /tasks?completed=true` should delete all completed tasks
+
+2. Bulk Delete students which are completed to be implemented 
+   1. `DELETE /students?isPresent=true` should delete all present students
