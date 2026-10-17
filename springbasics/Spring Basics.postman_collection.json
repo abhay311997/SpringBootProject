@@ -1,0 +1,192 @@
+{
+  "info": {
+    "_postman_id": "9b7bd0a4-0ee2-42a5-a13f-e65d64968be6",
+    "name": "Spring Basics",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "11876446",
+    "_collection_link": "https://go.postman.co/collection/11876446-9b7bd0a4-0ee2-42a5-a13f-e65d64968be6?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "GET /hello/world",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "name",
+              "value": "john",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:5454/hello/world",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5454",
+          "path": [
+            "hello",
+            "world"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET RequestParam /hello/person?name=Abhay",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:5454/hello/person?name=Abhay",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5454",
+          "path": [
+            "hello",
+            "person"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "Abhay"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET PathVariable /hello/person/John",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:5454/hello/person/John",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5454",
+          "path": [
+            "hello",
+            "person",
+            "John"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET /tasks/",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http:/localhost:5454/tasks/",
+          "host": [
+            "http"
+          ],
+          "port": "",
+          "path": [
+            "localhost:5454",
+            "tasks",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST /tasks/",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"task Check POST API6\",\r\n    \"dueDate\": \"2026-10-17\",\r\n    \"completed\" : true \r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http:/localhost:5454/tasks/",
+          "host": [
+            "http"
+          ],
+          "port": "",
+          "path": [
+            "localhost:5454",
+            "tasks",
+            ""
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "Checking Try Task",
+              "disabled": true
+            },
+            {
+              "key": "dueDate",
+              "value": "2026-10-17",
+              "disabled": true
+            },
+            {
+              "key": "completed",
+              "value": "true",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET /tasks/{id}",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"task Check POST API\",\r\n    \"dueDate\": \"2026-10-17\",\r\n    \"completed\" : true \r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http:/localhost:5454/tasks/6",
+          "host": [
+            "http"
+          ],
+          "port": "",
+          "path": [
+            "localhost:5454",
+            "tasks",
+            "6"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

@@ -13,12 +13,12 @@ Made a spring boot project with the following dependencies:
     like  /hello/world → {http://127.0.0.1:5454/hello/world},  return "Hello World !!!"
 2. Made a method to handle requests with a RequestParam
 Pass a parameter to the request and return a response with the parameter value
-  like /hello?name=John → {http://127.0.0.1:5454/hello?name=John}, return "Hello John !!!"
+  like /hello/person?name=John → {http://127.0.0.1:5454/hello/person?name=John}, return "Hello John !!!"
 3. Made a method to handle requests with a path variable
 Pass a parameter to the request and return a response with the parameter value
   like /hello/person/John → {http://127.0.0.1:5454/hello/person/John}, return "Hello Person John !!!"
 
-There is [a postman collection](./TaskManager.postman_collection.json) to test the API
+There is [a postman collection](./Spring Basics.postman_collection.json) to test the API
 
 ## Assignment
 
