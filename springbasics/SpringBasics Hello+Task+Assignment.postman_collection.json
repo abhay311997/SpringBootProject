@@ -80,7 +80,7 @@
           "response": []
         },
         {
-          "name": "PATCH student info",
+          "name": "PATCH a student info by rollNo",
           "request": {
             "method": "PATCH",
             "header": [],
@@ -102,7 +102,7 @@
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "DELETE a student by rollNo",
           "request": {
             "method": "DELETE",
             "header": [],
