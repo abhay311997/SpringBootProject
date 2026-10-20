@@ -1,0 +1,179 @@
+{
+  "info": {
+    "_postman_id": "f2eb4ea7-68ca-456c-9dc1-4e034261ccd0",
+    "name": "TaskManager",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "11876446",
+    "_collection_link": "https://go.postman.co/collection/11876446-f2eb4ea7-68ca-456c-9dc1-4e034261ccd0?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "POST /tasks",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"APIBHB3\",\r\n    \"dueDate\": \"2026-10-19\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5353/tasks",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5353",
+          "path": [
+            "tasks"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "Checking Try Task",
+              "disabled": true
+            },
+            {
+              "key": "dueDate",
+              "value": "2026-10-17",
+              "disabled": true
+            },
+            {
+              "key": "completed",
+              "value": "true",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PATCH /tasks/{id}",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"dueDate\": \"2026-10-31\",\r\n    \"completed\" : true \r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5353/tasks/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5353",
+          "path": [
+            "tasks",
+            "1"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "Checking Try Task",
+              "disabled": true
+            },
+            {
+              "key": "dueDate",
+              "value": "2026-10-17",
+              "disabled": true
+            },
+            {
+              "key": "completed",
+              "value": "true",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET /tasks",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5353/tasks",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5353",
+          "path": [
+            "tasks"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET /tasks/{id}",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"task Check POST API\",\r\n    \"dueDate\": \"2026-10-17\",\r\n    \"completed\" : true \r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5353/tasks/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5353",
+          "path": [
+            "tasks",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DELETE /tasks/{id}",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"task Check POST API\",\r\n    \"dueDate\": \"2026-10-17\",\r\n    \"completed\" : true \r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5353/tasks/0",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5353",
+          "path": [
+            "tasks",
+            "0"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
