@@ -17,6 +17,7 @@ public class StudentManagerController {
 
     // Create a new student with int rollNo, String name, boolean isPresent, Date dateOfBirth
     // rollNo should be greater than 0 and unique, name should be present, dateOfBirth must be path
+    // -> POST /students/ {with body}
     @PostMapping("/")
     Student createStudent(@RequestBody Student student){
         Date todayDate = new Date();
@@ -71,6 +72,23 @@ public class StudentManagerController {
         for(Student st : studentList){
             if(st.getRollNo().equals(rollNo)){
                 st.setDateOfBirth(DOB);
+                st.setPresent(isPresent);
+                return st;
+            }
+        }
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Student with roll number " + rollNo + " Not Exist.");
+    }
+
+    @PatchMapping("/{rollNo}")
+    Student updateStudent(@PathVariable("rollNo") Integer rollNo,@RequestBody Student student){
+        String name = student.getName();
+        Date dob = student.getDateOfBirth();
+        boolean isPresent  = student.isPresent();
+
+        for(Student st : studentList){
+            if(st.getRollNo().equals(rollNo)){
+                st.setName(name);
+                st.setDateOfBirth(dob);
                 st.setPresent(isPresent);
                 return st;
             }
