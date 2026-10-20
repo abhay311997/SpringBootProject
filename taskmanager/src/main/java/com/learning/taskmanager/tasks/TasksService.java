@@ -26,6 +26,13 @@ public class TasksService {
     }
 
     public Task createTask(String name, Date dueDate){
+        Date today = new Date();
+        if(name == null)
+            throw new IllegalTaskArgument(name, dueDate);
+        int len = name.length();
+        boolean valid = dueDate.after(today);
+        if(len<5 || len>50 || !valid)
+            throw new IllegalTaskArgument(name, dueDate);
         Task t = new Task(id++, name, dueDate, false);
         tasksList.add(t);
         return t;
@@ -53,4 +60,11 @@ public class TasksService {
             super("Task with id: " + id + " Not Found");
         }
     }
+
+    public static class IllegalTaskArgument extends IllegalArgumentException {
+        public IllegalTaskArgument(String name, Date dueDate){
+            super("IllegalArgument name: " + name + " should be between [5-50] Char and dueDate: " + dueDate +" should after Today's Date." );
+        }
+    }
+
 }

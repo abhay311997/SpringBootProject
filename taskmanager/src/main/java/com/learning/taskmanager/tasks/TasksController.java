@@ -2,6 +2,8 @@ package com.learning.taskmanager.tasks;
 
 import com.learning.taskmanager.tasks.dtos.CreateTaskDTO;
 import com.learning.taskmanager.tasks.dtos.UpdateTaskDTO;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -47,8 +49,37 @@ public class TasksController {
     }
 
     @ExceptionHandler(TasksService.TaskNotFoundException.class)
-    ResponseEntity<String> handleTaskNotFoundException(TasksService.TaskNotFoundException e){
-        return ResponseEntity.notFound().build();
+    ResponseEntity<String> TaskNotFoundException(TasksService.TaskNotFoundException e){
+        //return ResponseEntity.notFound().build();
+        return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
+                .body(e.getMessage());
+    }
+
+    @ExceptionHandler(TasksService.IllegalTaskArgument.class)
+    ResponseEntity<String> IllegalTaskArgumentException(TasksService.IllegalTaskArgument e){
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .body(e.getMessage());
+    }
+
+    //Handle 2 or 3 types of exceptions in the same @ExceptionHandler
+    @ExceptionHandler({TasksService.TaskNotFoundException.class, TasksService.IllegalTaskArgument.class})
+    ResponseEntity<String> handleTaskExceptions(Exception e) {
+        if (e instanceof TasksService.TaskNotFoundException) {
+            return ResponseEntity
+                    .status(HttpStatus.NOT_FOUND)
+                    .body(e.getMessage());
+        }
+        else if(e instanceof TasksService.IllegalTaskArgument){
+            return ResponseEntity
+                    .status(HttpStatus.BAD_REQUEST)
+                    .body(e.getMessage());
+        }
+
+        return ResponseEntity
+                .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .build();
     }
 
 }
