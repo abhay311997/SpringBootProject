@@ -56,22 +56,22 @@ public class TasksController {
                 .body(e.getMessage());
     }
 
-    @ExceptionHandler(TasksService.IllegalTaskArgument.class)
-    ResponseEntity<String> IllegalTaskArgumentException(TasksService.IllegalTaskArgument e){
+    @ExceptionHandler(TasksService.IllegalTaskArgumentException.class)
+    ResponseEntity<String> IllegalTaskArgumentException(TasksService.IllegalTaskArgumentException e){
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
                 .body(e.getMessage());
     }
 
     //Handle 2 or 3 types of exceptions in the same @ExceptionHandler
-    @ExceptionHandler({TasksService.TaskNotFoundException.class, TasksService.IllegalTaskArgument.class})
+    @ExceptionHandler({TasksService.TaskNotFoundException.class, TasksService.IllegalTaskArgumentException.class})
     ResponseEntity<String> handleTaskExceptions(Exception e) {
         if (e instanceof TasksService.TaskNotFoundException) {
             return ResponseEntity
                     .status(HttpStatus.NOT_FOUND)
                     .body(e.getMessage());
         }
-        else if(e instanceof TasksService.IllegalTaskArgument){
+        else if(e instanceof TasksService.IllegalTaskArgumentException){
             return ResponseEntity
                     .status(HttpStatus.BAD_REQUEST)
                     .body(e.getMessage());
