@@ -1,3 +1,6 @@
 2026-10-26 00:17:01.486659+05:30 jdbc[13]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]ID ID ARTICLES ARTICLES"; expected "INSERT"; SQL statement:
 ID ID ARTICLES ARTICLES [42001-240]
+2026-10-27 00:37:31.288967+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]ID ARTICLES"; expected "INSERT"; SQL statement:
+ID ARTICLES [42001-240]
