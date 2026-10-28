@@ -4,3 +4,9 @@ ID ID ARTICLES ARTICLES [42001-240]
 2026-10-27 00:37:31.288967+05:30 jdbc[13]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]ID ARTICLES"; expected "INSERT"; SQL statement:
 ID ARTICLES [42001-240]
+2026-10-29 00:27:51.937329+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DELETE [*]* FROM USERS"; expected "identifier"; SQL statement:
+DELETE * FROM USERS [42001-240]
+2026-10-29 00:28:01.640290+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DELETE [*]* FROM USERS"; expected "identifier"; SQL statement:
+DELETE * FROM USERS [42001-240]

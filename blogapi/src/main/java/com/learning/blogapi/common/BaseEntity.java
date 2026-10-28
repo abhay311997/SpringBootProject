@@ -18,4 +18,17 @@ public abstract class BaseEntity {
     @CreatedDate
     //@Column(nullable = false)
     Date createdAt;
+
+    protected void createDate(Date date) {
+        this.createdAt = date ;
+    }
+
+    /* always create createdAt = new Date()
+    @PrePersist
+    protected void onCreate() {
+        if (this.createdAt == null) {
+            this.createdAt = new Date();
+        }
+    }
+     */
 }

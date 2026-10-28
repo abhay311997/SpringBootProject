@@ -5,9 +5,12 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
+import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity(name = "users")
@@ -21,5 +24,14 @@ public class UserEntity extends BaseEntity {
     String password; //TODO : do not save password in plain text
     @Column
     String bio;
+
+    public void setCreatedAt(Date date) {
+        createDate(date);
+    }
+
+//    @ManyToMany(/* TODO: figure this out */ )
+//    List<UserEntity> followers;
+//    @ManyToMany(/* TODO: figure this out */ )
+//    List<UserEntity> following;
 
 }
