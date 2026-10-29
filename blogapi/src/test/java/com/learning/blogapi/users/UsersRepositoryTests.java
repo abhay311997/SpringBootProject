@@ -49,4 +49,10 @@ public class UsersRepositoryTests {
 
     }
 
+    @Test
+    public void findByUsernameReal(){
+        var user = usersRepository.findByUsername("abhaykumar31");
+        System.out.println(user);
+    }
+
 }
